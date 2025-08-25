@@ -1,6 +1,6 @@
 .. toctree::
    :maxdepth: 2
-   :caption: Sengo2 Smart Vision Card Maker Extension Kit
+   :caption: KT0351 Sengo2 Smart Vision Card Maker Extension Kit
 
    docs/Introduction
    docs/ArduinoTutorial/arduinoRST
