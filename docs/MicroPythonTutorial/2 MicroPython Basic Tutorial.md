@@ -109,6 +109,8 @@ Download the app according to your operation system. Here we demonstrate under <
 
 # 2.3 Burn Firmware (Important)
 
+<span style="color:red;">Note: You need to download the required data files from `1.Download code and library files` and extract them to your desktop.</span>
+
 To run MicroPython code on Pico, it is necessary to burn MicroPython firmware to Pico.
 
 ![thonny-22](./media/thonny-22.png)
@@ -176,7 +178,7 @@ After connection, “Raspberry Pi Pico” will appear on the left side of Thonny
 
 # 2.7 Load Code from Computer
 
-<span style="color:red;">Note: You need to download the required data files from `1.Resources Download` and extract them to your desktop.</span>
+<span style="color:red;">Note: You need to download the required data files from `1.Download code and library files` and extract them to your desktop.</span>
 
 Click Files –> This computer, open the file `Resources`.
 
