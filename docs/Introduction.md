@@ -8,15 +8,15 @@ Sengo2 AI Vision Card Maker Extension Kit (3-in-1 Car) includes a smart vision m
 
 Features:
 
-1. **Compatible with LEGO**
+**Compatible with LEGO**
    - Modular snap-on design, directly embedded in the Lego technic structure
-2. **Full-stack visual Capability**
+**Full-stack visual Capability**
    - Basic → Advanced → Developed: Color block Tracking/QR Code Recognition → Object Detection → Custom Deep Learning Model Deployment
-3. **Multiple Programming Languages**
+**Multiple Programming Languages**
    - KidsBlock Graphical Programming (for Primary and Secondary School Students) & Arduino/C++/MicroPython (High School/University Students)
-4. **High Compatibility**
+**High Compatibility**
    - Compatible with development boards such as Arduino UNO, Arduino Nano, ESP32, and Pico
-5. **AI Recognition Training**
+**AI Recognition Training**
    - Support model training. Students can independently train their own exclusive recognition models (such as garbage classification recognition)
 
 

@@ -1,6 +1,6 @@
-# Mount the AI Visual Module onto the Car
+# Mount the AI Visual Module onto the KS3027 Car
 
-Here we demonstrate how to mount this module on the `Handling Robot`, a Lego mini car of our KS0543 product as shown below:
+Here we demonstrate how to mount this module on the `Handling Robot`, a Lego mini car of our KS3027 product as shown below:
 
 ![install-1](./media/install-1.png)
 
