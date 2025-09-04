@@ -1,0 +1,96 @@
+from machine import I2C,UART,Pin,PWM
+from Sengo2 import *
+import time
+
+# srevo control pin GPIO 3
+servo_pin = Pin(3)
+servo = PWM(servo_pin)
+
+# buzzer control pin GPIO12
+buzzer = PWM(Pin(12))
+
+# Set the PWM frequency to 50Hz (standard servo frequency)
+servo.freq(50)
+
+# Wait for Sengo2 to complete the initialization of the operating system. This waiting time cannot be removed to prevent the situation where the controller has already developed and sent instructions before Sengo2 has been fully initialized
+time.sleep(3)
+
+# Choose UART or I2C communication mode. Sengo2 is I2C mode by default. You can switch between the two by short pressing the mode button.
+# Four UART communication modes: UART9600 (Standard Protocol Instruction), UART57600 (Standard Protocol Instruction), UART115200 (Standard Protocol Instruction), Simple9600 (Simple Protocol Instruction)
+#########################################################################################################
+# port = UART(2,rx=Pin(16),tx=Pin(17),baudrate=9600)
+port = I2C(0,scl=Pin(21),sda=Pin(20),freq=400000)
+
+# The communication address of Sengo2 is 0x60. If multiple devices are connected to the I2C bus, please avoid address conflicts.
+sengo2 = Sengo2(0x60)
+ 
+err = sengo2.begin(port)
+print("sengo2.begin: 0x%x"% err)
+ 
+# 1: Sengo2 can run multiple algorithms simultaneously, but there are certain restrictions.
+# 2. The parameter and result numbers of the sengo/sentry series products all start from 1.
+# 3. During normal use, the main controller sends commands to control the on and off of Sengo2 algorithm, rather than manual operation by joystick.
+err = sengo2.VisionBegin(sengo2_vision_e.kVision20Classes)
+print("sengo2.VisionBegin(sengo2_vision_e.kVision20Classes):0x%x"% err)
+
+
+def tone(pin, frequency, duration):
+    """Play the sound of the specified frequency"""
+    if frequency > 0:
+        pin.freq(frequency)
+        pin.duty_u16(32768)  # 50% duty cycle
+    time.sleep_ms(duration)
+    pin.duty_u16(0)  # stop play tone
+
+def no_tone(pin):
+    """no tone"""
+    pin.duty_u16(0)
+
+def countdown(seconds):
+    """countdown sound"""
+    for i in range(seconds, 0, -1):
+        # The ticking of the countdown
+        tone(buzzer, 800, 100)
+        time.sleep_ms(200)
+        no_tone(buzzer)
+        
+        # Interval time
+        time.sleep_ms(500)
+
+# Define the conversion function from the servo angle to the duty cycle
+def set_servo_angle(angle):
+    # Make sure the angle is within the range of 0 to 270 degrees
+    if angle < 0:
+        angle = 0
+    elif angle > 270:
+        angle = 270
+    
+    # Convert the angle to the duty cycle
+    # For a 270-degree servo, a 0.5ms pulse usually corresponds to 0 degrees, and a 2.5ms pulse corresponds to 270 degrees
+    min_duty = 1638  # 0.5ms duty cycle (0.5/20 * 65535)
+    max_duty = 8192  # 2.5ms duty cycle (2.5/20 * 65535)
+    
+    # Calculate the duty cycle of the corresponding angle
+    duty = int(min_duty + (max_duty - min_duty) * angle / 270)
+    servo.duty_u16(duty)
+
+
+while True:
+# Sengo2 does not actively return the detection and recognition results; it requires the main control board to send instructions for reading.
+# The reading process: 1.read the number of recognition results. 2.After receiving the instruction, Sengo2 will refresh the result data. 3.If the number of results is not zero, the board will then send instructions to read the relevant information. 
+# (Please be sure to build the program according to this process.)
+    obj_num = (sengo2.GetValue(sengo2_vision_e.kVision20Classes, sentry_obj_info_e.kStatus))
+    if obj_num:
+        for i in range(1,obj_num+1):
+            class20_label = sengo2.GetValue(sengo2_vision_e.kVision20Classes,sentry_obj_info_e.kLabel,1)
+            # Determine whether "Bottle" has been detected
+            if class20_label == class20_label_e.kBottle:
+                # The countdown sound before throwing, three times
+                countdown(3)
+                # Throw
+                set_servo_angle(90)
+                time.sleep(1)
+                # Slowly lower the throwing arm back
+                for j in range(90,0,-1):
+                    set_servo_angle(j)
+                    time.sleep(0.01)

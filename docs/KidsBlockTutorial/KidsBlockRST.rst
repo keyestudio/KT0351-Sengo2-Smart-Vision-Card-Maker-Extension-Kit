@@ -65,3 +65,5 @@ This tutorial is based on the ESP32 development board to demonstrate how to use 
     5.3 Color Block Following Car
     5.4 QR Code Control Light
     5.5 Jan-Ken Punch
+    5.6 Smart Stone Thrower
+    5.7 Red and Blue Sorting Car
