@@ -56,7 +56,7 @@ And you can see:
 
 ![kidsblock-14](./media/kidsblock-14.png)
 
-5\.  Click “**Settings**” –> “**Privacy and Security**” to “**still open**”. And then “ **Open “KidsBlock”？**”.
+5\.  Click “**Settings**” –> “**Privacy and Security**” to “**open anyway**”. And then “ **Open “KidsBlock”**”.
 
 ![kidsblock-16](./media/kidsblock-16.png)
 
