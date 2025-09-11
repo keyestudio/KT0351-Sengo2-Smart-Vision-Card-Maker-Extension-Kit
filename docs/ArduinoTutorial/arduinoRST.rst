@@ -9,8 +9,18 @@ Arduino Tutorial
 
     1 Resources Download
 
+2.Driver Installation (Optional)
+==================================
+This section is not mandatory and is only used when the USB port cannot be recognized by the computer on the development board. If it is already recognized, it can be skipped directly!!!
 
-2.Arduino IDE Basic Tutorial
+(Note: If the main board cannot be recognized in Arduino or kidsblock projects, please check whether the board is connected properly, or try other USB port on your computer. If it still does not work, follow these steps to install driver.)
+
+.. toctree::
+    :maxdepth: 1
+
+    2 Driver Installation (Optional)
+
+3.Arduino IDE Basic Tutorial
 ==============================
 
 If you are a beginner, please be sure to read the Arduino IDE Basic Tutorial. By learning this part of the tutorial, you can avoid many errors.
@@ -18,19 +28,7 @@ If you are a beginner, please be sure to read the Arduino IDE Basic Tutorial. By
 .. toctree::
     :maxdepth: 1
 
-    2 Arduino Basic Tutorial
-
-
-3.Wiring
-==========
-The AI vision module uses I2C communication, so we only need to connect the connection line of the AI vision module to the I2C interface of the development board.
-
-.. toctree::
-    :maxdepth: 1
-
-    3 Wiring
-
-
+    3 Arduino Basic Tutorial
 
 4.AI Vision Module Fundamentals Course
 ========================================
@@ -38,7 +36,8 @@ The basic tutorial is an independent tutorial for the AI vision module, mainly o
 
 .. toctree::
     :maxdepth: 1
-   
+    
+    4.0 Wiring
     4.1 Color Recognition
     4.2 Color Block Detection
     4.3 Label Recognition

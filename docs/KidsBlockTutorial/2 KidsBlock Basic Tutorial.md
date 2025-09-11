@@ -78,7 +78,23 @@ And you can see:
 
 ⚠️ **ATTENTION**: The following is an example for Windows. For MacOS , it can serve as a reference.
 
-## 2.3.1 Connect to Device
+## 2.3.1 Install the development board driver
+
+1. After installing the KisdBlock software, double-click on the desktop to open![KidsBlock](./media/KidsBlock.png)
+
+2. After entering the page, click the settings button in the upper right corner
+
+![Equip-21](./media/Equip-21.png)
+
+3. Click 'Install driver' again.
+
+![Equip-21](./media/Equip-22.png)
+
+4. After confirming in sequence according to the computer pop-up prompt, this pop-up window will finally appear. We click on 'INSTALL' and wait for the installation to succeed.
+
+![Equip-23](./media/Equip-23.png)
+
+## 2.3.2 Connect to Device
 
 1\. Make sure the ESP32 main control board is successfully connected to the computer, and then click “**KidsBlock**” icon ![KidsBlock](./media/KidsBlock.png) to open it.
 
@@ -106,7 +122,7 @@ And you can see:
 
 
 
-## 2.3.2 Main Page
+## 2.3.3 Main Page
 
 KidsBlock software interface is shown in the following figure:
 
@@ -116,7 +132,7 @@ KidsBlock software interface is shown in the following figure:
 
 
 
-## 2.3.3 Load KidsBlock Library
+## 2.3.4 Load KidsBlock Library
 
 ⚠️ **ATTENTION** : If you drag and build code blocks yourself, you must manually add library files. Without library files, you will not see the corresponding blocks for the function. If you directly import the code file we provide, there is no need to add the library file as it will be automatically added when importing.
 
@@ -138,7 +154,7 @@ Click ![Return](./media/Return.png) to go to the editor and you can see the func
 
 ![](./media/Equip-19.png)
 
-## 2.3.4 Build Blocks / Save and Upload Codes
+## 2.3.5 Build Blocks / Save and Upload Codes
 
 Make sure the ESP32 main control board is connected to the computer, and then click “**KidsBlock**” to open it.
 
@@ -162,7 +178,7 @@ After uploading, the serial port will return characters “Hello KidsBlock”.
 
 ![](./media/Equip-16.png)
 
-## 2.3.5 Load Codes from Computer
+## 2.3.6 Load Codes from Computer
 
 Load code from computer. 
 

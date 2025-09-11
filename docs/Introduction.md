@@ -6,18 +6,17 @@
 
 Sengo2 AI Vision Card Maker Extension Kit (3-in-1 Car) includes a smart vision module specially designed for maker education, which is perfectly compatible with Lego building blocks and the Arduino ecosystem. This module integrates a multi-core AI processor and supports 10 machine vision functions such as color recognition, label code tracking, face detection, and real-time deep learning. Through plug-and-play hardware interfaces and open-source projects, students can quickly build vision-driven projects such as cars and robotic arms, and easily from graphical programming to Python/Arduino code development. What an ideal teaching aid for cultivating AI thinking and engineering capabilities!
 
-Features:
+**Features:**
 
-**Compatible with LEGO**
-   - Modular snap-on design, directly embedded in the Lego technic structure
-**Full-stack visual Capability**
-   - Basic → Advanced → Developed: Color block Tracking/QR Code Recognition → Object Detection → Custom Deep Learning Model Deployment
-**Multiple Programming Languages**
-   - KidsBlock Graphical Programming (for Primary and Secondary School Students) & Arduino/C++/MicroPython (High School/University Students)
-**High Compatibility**
-   - Compatible with development boards such as Arduino UNO, Arduino Nano, ESP32, and Pico
-**AI Recognition Training**
-   - Support model training. Students can independently train their own exclusive recognition models (such as garbage classification recognition)
+**Compatible with LEGO**：Modular snap-on design, directly embedded in the Lego technic structure
+
+**Full-stack visual Capability**：Basic → Advanced → Developed: Color block Tracking/QR Code Recognition → Object Detection → Custom Deep Learning Model Deployment
+
+**Multiple Programming Languages**：KidsBlock Graphical Programming (for Primary and Secondary School Students) & Arduino/C++/MicroPython (High School/University Students)
+
+**High Compatibility**：Compatible with development boards such as Arduino UNO, Arduino Nano, ESP32, and Pico
+
+**AI Recognition Training**：Support model training. Students can independently train their own exclusive recognition models (such as garbage classification recognition)
 
 
 
